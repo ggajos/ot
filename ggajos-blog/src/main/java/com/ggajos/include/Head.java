@@ -52,7 +52,7 @@ public class Head implements Block {
             // <!-- script/css -->
             // FIXME GG: in progress, add CSS asset management
             link.rel("stylesheet").type("text/css").href(context.relativeUrl("css/main.css")),
-            script.attr("async").src(context.relativeUrl("assets/js/modernizr.js")),
+            script.attr("async").src(context.relativeUrl("js/modernizr.js")),
             script.in("setInterval(function() { jQuery.getJSON('/meta.json', function(data) { if(!window.version) { window.version = data.version } else if(window.version !== data.version) { window.location.reload() } }) }, 500);"),
             nil.in(
                 () -> "<!--[if lt IE 9]>",
