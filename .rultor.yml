@@ -1,0 +1,7 @@
+architect:
+  - ggajos
+merge:
+  fast-forward: only
+  rebase: true
+  script: |-
+    mvn clean install
