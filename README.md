@@ -1,0 +1,1 @@
+High entropy repository for idea incubation.

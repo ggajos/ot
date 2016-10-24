@@ -1,0 +1,45 @@
+---
+layout: post
+---
+
+{{{ content }}}
+
+<blockquote>
+    <h4>The ot-clean series</h4>
+    <p>
+        This blog post is one of the series about the <a
+        href="https://github.com/ggajos/ot-clean" rel="nofollow">ot-clean</a>.
+        Simple open source tool that maintains your projects directories cleaned
+        from all the garbage. Feel free to look at the <a href="https://github.com/ggajos/ot-clean" rel="nofollow">source
+        code</a>
+        or <a href="https://github.com/ggajos/ot-clean" rel="nofollow">readme page</a> for more
+        information.
+        You can also <a href="https://github.com/ggajos/ot-clean/pulls" rel="nofollow">submit
+        pull request</a> or
+        <a href="https://github.com/ggajos/ot-clean/issues" rel="nofollow">post suggestion</a>.
+        This text participates in <a href="http://dajsiepoznac.pl/" rel="nofollow">open source
+        blogging competition</a>.
+    </p>
+
+    <h4>Project status</h4>
+    <p class="post-badges">
+        <a href="https://travis-ci.org/ggajos/ot-clean" rel="nofollow">
+            <img src="https://travis-ci.org/ggajos/ot-clean.svg?branch=master" alt="Build Status">
+        </a>
+        <a href="https://coveralls.io/github/ggajos/ot-clean?branch=master" rel="nofollow">
+            <img src="https://coveralls.io/repos/github/ggajos/ot-clean/badge.svg?branch=master"/>
+        </a>
+    </p>
+
+    <h4>All posts from the ot-clean series</h4>
+    <ul class="post-list">
+    {% for post in site.categories['ot-clean'] %}
+        {% if post.title != null %}
+        <li>
+            <span>{{ post.date | date_to_string }} &raquo;</span>
+            <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</blockquote>

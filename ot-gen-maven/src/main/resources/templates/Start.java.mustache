@@ -1,0 +1,65 @@
+package com.opentangerine.genotype.html;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+/**
+ * @author Grzegorz Gajos
+ */
+class Start implements Gen {
+    private String name;
+
+    public Start() {
+        this(null);
+    }
+
+    public Start(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public Gen attr(String key) {
+        return new Element(this.name).attr(key);
+    }
+
+    @Override
+    public Gen attr(String key, String value) {
+        return new Element(this.name).attr(key, value);
+    }
+
+    @Override
+    public Gen attr(String key, Optional<String> value) {
+        return new Element(this.name).attr(key, value);
+    }
+
+    @Override
+    public Gen in(Renderable... tags) {
+        return new Element(this.name).in(tags);
+    }
+
+    @Override
+    public Gen in(String content) {
+        return new Element(this.name).in(content);
+    }
+
+    @Override
+    public Gen in(Stream<Renderable> stream) {
+        return new Element(this.name).in(stream);
+    }
+
+    {{#attrs}}
+    @Override
+    public Gen {{name}}(String {{name}}) {
+        return new Element(this.name).{{name}}({{name}});
+    }
+    @Override
+    public Gen {{name}}(Optional<String> {{name}}) {
+        return new Element(this.name).{{name}}({{name}});
+    }
+    {{/attrs}}
+
+    @Override
+    public String render() {
+        return new Element(this.name).render();
+    }
+}

@@ -1,0 +1,20 @@
+package com.opentangerine.genotype.html;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+/**
+ * @author Grzegorz Gajos
+ */
+public interface Gen extends Renderable {
+    Gen in(Renderable... tags);
+    Gen in(String content);
+    Gen in(Stream<Renderable> stream);
+    Gen attr(String key);
+    Gen attr(String key, String value);
+    Gen attr(String key, Optional<String> value);
+    {{#attrs}}
+    Gen {{name}}(String {{name}});
+    Gen {{name}}(Optional<String> {{name}});
+    {{/attrs}}
+}

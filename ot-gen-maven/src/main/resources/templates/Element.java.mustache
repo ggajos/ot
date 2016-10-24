@@ -1,0 +1,58 @@
+package com.opentangerine.genotype.html;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+/**
+ * @author Grzegorz Gajos
+ */
+class Element implements Gen {
+    private El el;
+
+    public Element(String name) {
+        this.el = new El(name);
+    }
+
+    public Gen in(Renderable... tags) {
+        this.el.in(tags);
+        return this;
+    }
+
+    public Gen in(String tags) {
+        this.el.in(tags);
+        return this;
+    }
+
+    public Gen in(Stream<Renderable> stream) {
+        this.el.in(stream);
+        return this;
+    }
+
+    public Gen attr(String key) {
+        this.el.attr(key);
+        return this;
+    }
+
+    public Gen attr(String key, String value) {
+        return this.attr(key, Optional.ofNullable(value));
+    }
+
+    public Gen attr(String key, Optional<String> value) {
+        this.el.attr(key, value);
+        return this;
+    }
+
+    {{#attrs}}
+    public Gen {{name}}(String {{name}}) {
+        return this.{{name}}(Optional.ofNullable({{name}}));
+    }
+    public Gen {{name}}(Optional<String> {{name}}) {
+        return this.attr("{{html}}", {{name}});
+    }
+    {{/attrs}}
+
+    @Override
+    public String render() {
+        return el.render();
+    }
+}

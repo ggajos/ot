@@ -1,0 +1,14 @@
+package com.opentangerine.genotype.html;
+
+/**
+ * @author Grzegorz Gajos
+ */
+public interface Wizard {
+    static Renderable nil(String text) {
+        return () -> " " + text + " ";
+    }
+    Gen nil = new Start();
+    {{#tags}}
+        Gen {{.}} = new Start("{{.}}");
+    {{/tags}}
+}

@@ -1,0 +1,33 @@
+url: http://ggajos.com
+name: Blog about programming
+meta_keywords: blog, java, software development, software house
+meta_title: Java Developer - Blog - Grzegorz Gajos
+meta_description: If you are looking for interesting articles from IT space, a fresh perspective on IT business, software quality or interesting tips in a day to day work, this blog might be interesting to you. Today, ...
+basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish, theme-base-01
+author:
+  nick: ggajos
+  name: Grzegorz Gajos
+  email: grzegorz.gajos@opentangerine.com
+  url: http://opentangerine.com
+highlighter: rouge
+permalink: :title
+
+exclude: 
+  - Gemfile
+  - Rakefile
+  - README.md
+  - .gitignore
+  - .sass-cache
+  - Gemfile.lock
+  - dev.bat
+  - dev-draft.bat
+  - blog.iml
+  - blog.ipr
+  - blog.iws  
+
+sass:
+    sass_dir: assets/css/_sass
+    style: :compressed
+
+gems:
+  - jekyll-sitemap
