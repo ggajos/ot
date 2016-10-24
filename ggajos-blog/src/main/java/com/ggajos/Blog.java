@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 public class Blog {
     // FIXME GG: in progress, generate about page
     public static void main(String[] args) {
-        new Site("http://localhost:4000/", Paths.get(".").resolve("target/static-site"))
+        new Site("http://localhost:4000/", Paths.get(".").resolve("target/web"))
                 .addPage("about", new AboutPage())
                 .generate();
     }

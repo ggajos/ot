@@ -11,6 +11,7 @@ import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Arrays;
 
+import com.opentangerine.maven.server.Backend;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.Maven;
 import org.apache.maven.execution.MavenSession;
@@ -47,7 +48,7 @@ public class Watch extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        Jetty.run();
+        Backend.WEB.start();
         new Thread(() -> {
             try (final WatchService watchService = FileSystems.getDefault().newWatchService()) {
                 compile(true);

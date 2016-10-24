@@ -35,7 +35,7 @@ public class Default implements Block {
                     () -> context.get("content").orElse(""),
                     footer.in(" "),
                     script.src("//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"),
-                    script.src(context.relativeUrl("assets/js/all.js")),
+                    script.src(context.relativeUrl("js/all.js")),
                     googleAnalytics()
                 )
             ));
