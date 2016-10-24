@@ -1,9 +1,0 @@
-docker:
-  image: maven:3-jdk-8
-architect:
-  - ggajos
-merge:
-  fast-forward: only
-  rebase: true
-  script: |-
-    mvn clean install
